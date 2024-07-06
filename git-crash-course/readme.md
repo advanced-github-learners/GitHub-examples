@@ -18,6 +18,42 @@ mkdir /workspace/tmp
 cd /workspace/tmp
 ```
 
+You'll need to generate a personal access token (PAT)
+https://github.com/settings/tokens
+you will use PAT as your password when you log in
+
+- Give it access to Contents for Commits
+
+## SSH
+```sh
+git clone git@github.com:jmikolajek/GitHub-examples.git
+cd GitHub-examples/
+```
+
+We will need to create our own SSH rsa key pair
+```sh
+ssh-keygen -t rsa
+```
+
+We can test our connection here:
+```
+ssh -T git@github.com
+```
+
+for WSL users if you create a non default key you might need to add it
+```sh
+eval `ssh-agent`
+ssh-add
+```
+## Github CLI
+install the cli
+
+```sh
+sudo apt update
+sudo apt install gh
+```
+
+
 ## HTTPS
 ```sh
 git clone https://github.com/jerzym1/GitHub-examples
@@ -35,6 +71,19 @@ Set the global editor
 git config --global core.editor code
 ```
 ## Branches
+
+List of Branches
+```
+git branch
+```
+Create a new branch
+```
+git branch branch-name
+```
+Checkout the branch
+```
+git checkout dev
+```
 
 ## Remotes
 
